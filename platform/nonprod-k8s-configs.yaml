@@ -23,7 +23,7 @@ spec:
         targetRevision: main
       destination:
         server: "{{url}}"
-        namespace: dev-app
+        namespace: default
       # syncPolicy:
       #   automated:
       #     prune: true
