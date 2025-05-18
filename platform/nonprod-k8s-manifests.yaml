@@ -16,6 +16,7 @@ spec:
     metadata:
       name: "{{cluster}}-manifest"
     spec:
+      project: default
       source:
         repoURL: git@github.com:TeeradonNamkanisorn/nonprod-k8s-manifests.git
         path: "{{cluster}}/my-app/cart"

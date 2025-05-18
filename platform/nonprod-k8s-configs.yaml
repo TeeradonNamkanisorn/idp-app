@@ -16,6 +16,7 @@ spec:
     metadata:
       name: "{{cluster}}-configs"
     spec:
+      project: default
       source:
         repoURL: git@github.com:TeeradonNamkanisorn/nonprod-k8s-configs.git
         path: "{{cluster}}/my-app"
