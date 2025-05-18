@@ -17,7 +17,7 @@ spec:
     spec:
       source:
         repoURL: git@github.com:TeeradonNamkanisorn/nonprod-k8s-configs.git
-        path: dev/my-app
+        path: "{{cluster}}/my-app"
         targetRevision: main
       destination:
         server: "{{url}}"
