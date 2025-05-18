@@ -23,7 +23,7 @@ spec:
         targetRevision: main
       destination:
         server: "{{url}}"
-        namespace: "{{cluser}}-app"
+        namespace: "{{cluster}}-app"
       syncPolicy:
         automated:
           prune: true
