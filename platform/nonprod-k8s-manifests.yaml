@@ -13,11 +13,11 @@ spec:
           url: "https://kubernetes.default.svc"
   template:
     metadata:
-      name: "{{cluster}}-wallet"
+      name: "{{cluster}}-manifest"
     spec:
       source:
         repoURL: git@github.com:TeeradonNamkanisorn/nonprod-k8s-manifests.git
-        path: dev/my-app/cart
+        path: "{{cluster}}/my-app/cart"
         targetRevision: main
       destination:
         server: "{{url}}"
