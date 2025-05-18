@@ -23,7 +23,7 @@ spec:
         targetRevision: main
       destination:
         server: "{{url}}"
-        namespace: default
+        namespace: sut-app
       syncPolicy:
         automated:
           prune: true
