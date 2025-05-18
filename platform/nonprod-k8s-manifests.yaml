@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: my-app-set
+
+spec:
+  generators:
+    - list:
+      elements:
+        - cluster: dev
+          url: "https://kubernetes.default.svc"
+        - cluster: sut
+          url: "https://kubernetes.default.svc"
+  template:
+    metadata:
+      name: "{{cluster}}-wallet"
+    spec:
+      source:
+        repoURL: git@github.com:TeeradonNamkanisorn/nonprod-k8s-manifests.git
+        path: dev/my-app
+        targetRevision: main
+      destination:
+        server: "{{url}}"
