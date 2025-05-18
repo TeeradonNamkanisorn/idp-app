@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: infra
+  namespace: argocd
+  finalizers:
+    - resources-finalizer.argocd.argoproj.io
+spec:
+  description: Infrastructure resources
+  # clusterResourceWhitelist:
+  #   - group: ""
+  #     kind: Namespace
+  roles:
+    - name: read-write
+      description: Read write
+      policies:
+        - p, proj:team-infra:read-write, applications, get, team-infra/*, allow
+        - p, proj:team-infra:read-write, applications, sync, team-infra/*, allow
+        - p, proj:team-infra:read-write, applications, update, team-infra/*, allow
+  destinations:
+    - name: "*"
+      namespace: "*"
+      server: "*"
+  sourceRepos:
+    - git@github.com:TeeradonNamkanisorn/nonprod-k8s-manifests.git

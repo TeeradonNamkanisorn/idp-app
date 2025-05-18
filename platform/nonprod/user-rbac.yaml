@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: argocd-rbac-cm
+  namespace: argocd
+  labels:
+    app.kubernetes.io/name: argocd-rbac-cm
+    app.kubernetes.io/part-of: argocd
+data:
+  policy.csv: |
+    g, theme, proj:team-a:read-write
+    g, theme, prj:team-infra:read
+    g, theme2, proj:team-b:read-write
+    g, theme2, proj:team-a:read-only
+    p, infra-guy, applications, *,  */*, allow
+    p, infra-guy, projects, get, *, allow
