@@ -18,7 +18,7 @@ spec:
     spec:
       project: default
       source:
-        repoURL: git@github.com:TeeradonNamkanisorn/nonprod-k8s-configs.git
+        repoURL: git@github.com:TeeradonNamkanisorn/nonprod-k8s-configmaps.git
         path: "{{cluster}}/my-app"
         targetRevision: main
       destination:
