@@ -21,3 +21,4 @@ spec:
         targetRevision: main
       destination:
         server: "{{url}}"
+        namespace: default
