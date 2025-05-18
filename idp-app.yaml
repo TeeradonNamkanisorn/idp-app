@@ -5,9 +5,10 @@ metadata:
   namespace: argocd
 spec:
   project: default
-  source: git@github.com:TeeradonNamkanisorn/idp-app.git
-  targetRevision: main
-  path: platform
+  source:
+    repoURL: git@github.com:TeeradonNamkanisorn/idp-app.git
+    targetRevision: main
+    path: platform
   directory:
     recurse: true
   destination:
